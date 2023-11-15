@@ -1,0 +1,79 @@
+$error-color:red;
+$forgot-password-color:rgb(120, 120, 188);
+$primary-color:#1d1a69;
+$secondary-color:#ffffff;
+$border-color:#010000;
+$hover-color: #aed25d;
+$transparent-color: transparent;
+
+@mixin alignment{
+    display: flex;
+    flex-direction: column;
+}
+@mixin position {
+  position: relative;
+}
+@mixin alignment-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+@mixin height($height){
+    height:$height;
+}
+@mixin width($width){
+    width:$width;
+}
+@mixin fontSize($fontSize){
+    font-size: $fontSize;
+}
+.required {
+    color: $error-color;
+  }
+  .forgot_password {
+    position: relative;
+    float: right;
+    color: $forgot-password-color;
+  }
+  .forgot_password::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    @include height(2px);
+    @include width(100%);
+    background: $primary-color;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s;
+  }
+  .forgot_password:hover {
+    color: $primary-color;
+  }
+  .forgot_password:hover::after {
+    transform: scaleX(1);
+  }
+  .bi-check-circle-fill {
+    @include fontSize(30px);
+    @include height(30px);
+  }
+  .input-group,
+  .form-group {
+    position: relative;
+  }
+  .bi-eye-fill,
+  .bi-eye-slash-fill {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 10;
+  }
+  .form-group .bi-eye-fill,
+  .form-group .bi-eye-slash-fill {
+    top: 30px;
+  }
+  .label{
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 5px;
+  }
