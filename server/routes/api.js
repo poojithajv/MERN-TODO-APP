@@ -1,0 +1,13 @@
+const express=require('express')
+const {registerUser,loginUser} = require('../controllers/AuthController')
+const {createTodo,getAllTodos,markTodo,deleteTodo,getTodoOfUser}=require('../controllers/TodoController')
+const validateToken = require('../middlewares/ValidateToken')
+const apiRoute=express.Router()
+apiRoute.post('/register',registerUser)
+apiRoute.post('/login',loginUser)
+apiRoute.post('/createTodo',validateToken,createTodo)
+apiRoute.get('/getAllTodos/:userId',validateToken,getAllTodos)
+apiRoute.get('/getTodo/:userId/:todoId',validateToken,getTodoOfUser)
+apiRoute.put('/markTodo/:todoId',validateToken,markTodo)
+apiRoute.delete('/deleteTodo/:todoId',validateToken,deleteTodo)
+module.exports=apiRoute
