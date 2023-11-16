@@ -1,0 +1,105 @@
+@import './Login.scss';
+.todo-container{
+    @include alignment-row();
+    justify-content: space-between;
+    background-color: rgb(41,127,184);
+    height:10vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+.logo{
+    height:50px;
+}
+.right-content{
+    @include alignment-row();
+    align-items: center;
+    color: $secondary-color;
+    font-weight: bold;
+}
+.welcome{
+    margin-top: 15px;
+    @include fontSize(16px);
+    margin-right: 20px;
+}
+.logout{
+    margin-top: 10px;
+    font-weight: bold;
+    color: $logout-color;
+}
+/* TodoCard.css */
+.incomplete{
+    @include fontSize(20px);
+    text-align: right;
+    color: $error-color;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+.complete{
+    @include fontSize(20px);
+    text-align: right;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.add-btn{
+    color: $secondary-color;
+    @include fontSize(15px);
+    width:80px;
+    height:40px;
+    border: none;
+    background-color: $primary-color;
+}
+  
+  /* TodoList.css */
+  .todos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .card-date{
+    text-align: right;
+  }
+  .delete-mark-buttons{
+    @include alignment-row();
+    justify-content: space-between;
+  }
+  .delete{
+    color:$error-color;
+    margin-top: 10px;
+  }
+  .edit{
+    color: $primary-color;
+    margin-top: 10px;
+  }
+  .card{
+    width: 30%;
+  }
+  @media screen and (max-width:600px) {
+    .card{
+        width:60%;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .card{
+        width:80%;
+    }
+  }
+  .checkbox{
+    text-align: left;
+  }
+  .checkbox1{
+    width: 50px;
+  height: 25px;
+  margin-top: 10px;
+  }

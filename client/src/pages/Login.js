@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link,useNavigate } from 'react-router-dom';
 import {toast} from 'react-hot-toast'
@@ -33,7 +32,8 @@ const Login = () => {
       const response=await axios.post('http://localhost:5000/api/login',{email,password})
       console.log(response)
       if (response.status===200){
-        localStorage.setItem('userId',response.data.userId)
+        localStorage.setItem('todoUserId',response.data.userId)
+        localStorage.setItem('name',response.data.userName)
         localStorage.setItem('accessToken',response.data.accessToken)
         toast.success('Login Successful')
         navigate('/all_todos')
@@ -46,9 +46,8 @@ const Login = () => {
   return (
     <div>
       <div className="container">
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-6 col-10">
-          <div className="card my-3">
+      <div className="row d-flex justify-content-center align-center">
+        <div className="col-md-6 my-5 login">
               <div className="card-header">
 								<h2 className='user-main-heading'>Todo App Login</h2>
 							</div>
@@ -63,14 +62,15 @@ const Login = () => {
                   <input type="password" id="password" className="form-control" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                   <span type='button' onClick={() => showPassword('password')}><i id='eye-symbol' className="bi bi-eye-fill"></i></span>
                 </div>
-                <button type="submit" className="btn btn-primary btn-block mt-3">Login</button>
+                <div className='register'>
+                  <button type="submit" className="btn btn-primary btn-block mt-3">Login</button>
+                </div>
               </form>
               <hr />
               <p className="text-center mt-3">Don't have an account? <Link to="/register">Sign Up</Link></p>
             </div>
           </div>
         </div>
-      </div>
     </div>
     </div>
   );

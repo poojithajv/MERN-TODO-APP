@@ -61,7 +61,7 @@ const markTodo=asyncHandler(async(req,res)=>{
             return 
         }
         const updatedTodo = await TodoModel.findOneAndUpdate(
-            req.params.id,
+            { todoId },
             req.body,
             { new: true }
         );

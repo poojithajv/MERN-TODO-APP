@@ -3,7 +3,7 @@ $forgot-password-color:rgb(120, 120, 188);
 $primary-color:#1d1a69;
 $secondary-color:#ffffff;
 $border-color:#010000;
-$hover-color: #aed25d;
+$logout-color: black;
 $transparent-color: transparent;
 
 @mixin alignment{
@@ -76,4 +76,13 @@ $transparent-color: transparent;
     display: flex;
     align-self: flex-start;
     margin-bottom: 5px;
+  }
+  .login{
+    border: 1px solid #000001;
+    padding: 30px;
+  }
+  .register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

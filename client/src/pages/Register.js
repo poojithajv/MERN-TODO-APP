@@ -51,8 +51,7 @@ function Register() {
     <div>
       <div className="container">
       <div className="row d-flex justify-content-center">
-        <div className="col-md-6 col-10">
-          <div className="card my-3">
+        <div className="col-md-6 col-10 my-5 login">
               <div className="card-header">
 								<h2 className='user-main-heading'>Todo App Register</h2>
 							</div>
@@ -75,7 +74,9 @@ function Register() {
                     <label className='label' htmlFor="number">Mobile Number <span className='required'>*</span></label>
 										<input type="number" name="mobileNo" id="number" placeholder="Enter your mobile number" value={user.mobileNo} onChange={changeHandler} className='form-control' pattern='[6-9]\d{9}' title='Please enter valid mobileNo number' required />
                 </div>
-                <button type="submit" className="btn btn-primary btn-block mt-3">Register</button>
+                <div className='register'>
+                  <button type="submit" className="btn btn-primary btn-block mt-3">Register</button>
+                </div>
               </form>
               <hr />
               <p className="text-center mt-3">Already have an account? <Link to="/login">Login</Link></p>
@@ -83,7 +84,6 @@ function Register() {
           </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }
